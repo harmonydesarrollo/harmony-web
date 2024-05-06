@@ -1,0 +1,58 @@
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0; /* Ajusta el menú a la izquierda */
+  width: 97%; /* Ancho del menú al 100% del ancho de la ventana del navegador */
+  background-color: #00d6b2; /* Color de fondo del menú */
+  z-index: 1000; /* Asegura que el menú esté por encima de otros elementos */
+  display: flex; /* Activa el modo de flexbox */
+  justify-content: flex-end; /* Alinea los elementos al final del contenedor (a la derecha) */
+  padding: 10px 20px; /* Añade relleno alrededor del contenido del menú */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+  border-bottom: 1px solid #00d6b2; /* Añade una línea divisoria en la parte inferior */
+  li {
+    position: relative; // Establece la posición relativa para los elementos del menú
+  }
+
+  .submenu {
+    display: none; // Oculta el submenú por defecto
+    position: absolute; // Posición absoluta para que no afecte el diseño del resto del menú
+    top: 100%; // Aparece debajo del elemento padre
+    left: 10; // Alineado con el borde izquierdo del elemento padre
+    background-color: #fff; // Color de fondo del submenú
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); // Sombra suave
+    padding: 10px; // Espaciado interior del submenú
+    z-index: 1000; // Asegura que el submenú esté por encima de otros elementos
+  }
+
+  li:hover .submenu {
+    display: block; // Muestra el submenú cuando el cursor pasa sobre el elemento padre
+  }
+}
+
+.menu ul {
+  list-style: none; /* Elimina los puntos de la lista */
+  margin: 0; /* Elimina el margen exterior */
+  padding: 0; /* Elimina el relleno interior */
+  display: flex; /* Activa el modo de flexbox para los elementos de la lista */
+}
+
+.menu ul li {
+  margin-left: 20px; /* Añade un espacio entre los elementos de la lista */
+}
+
+.menu ul li:last-child {
+  margin-right: 0; /* Elimina el margen derecho del último elemento de la lista */
+}
+
+.menu ul li a {
+  text-decoration: none; /* Elimina el subrayado de los enlaces */
+  color: #333; /* Color del texto */
+  font-weight: bold; /* Añade negrita al texto */
+  transition: color 0.3s ease; /* Agrega una transición suave al color del texto */
+  // color: white;
+}
+
+.menu ul li a:hover {
+  color: #007bff; /* Cambia el color del texto al pasar el cursor sobre el enlace */
+}
