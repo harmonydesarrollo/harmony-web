@@ -21,7 +21,7 @@ const Section1: React.FC = () => {
             <br />
             <Button
               className="section-btn"
-              onClick={() => handleScheduleAppointmentClick('7711129510', 'Buenas tardes, me gustaria agendar una cita.')}
+              onClick={() => handleScheduleAppointmentClick('5576877703', '¡Hola! Bienvenido a Harmony Therapy. Estamos aquí para ayudarte a encontrar la felicidad y libertad de movimiento. Por favor, déjanos tu mensaje y te responderemos pronto. ¡Gracias por elegirnos!')}
             >
               Agendar cita
             </Button>
