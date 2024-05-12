@@ -32,7 +32,7 @@ const handleFacebookClick = () => {
   const handleIconClick = (op: number) => {
     switch (op) {
       case 1:
-        handleScheduleAppointmentClick('7711129510', 'Hola!, me gustaria agendar una cita.');
+        handleScheduleAppointmentClick('5576877703', '¡Hola! Bienvenido a Harmony Therapy. Estamos aquí para ayudarte a encontrar la felicidad y libertad de movimiento. Por favor, déjanos tu mensaje y te responderemos pronto. ¡Gracias por elegirnos!');
         break;
       case 2:
         handleSocialMediaClick('https://www.facebook.com/HelldyTherapy');
@@ -41,10 +41,10 @@ const handleFacebookClick = () => {
         handleSocialMediaClick('https://www.instagram.com/harmony.fisioterapia/');
         break;
       case 4:
-        handleSocialMediaClick('https://www.youtube.com/@helldytherapy8125');
+        handleSocialMediaClick('https://www.youtube.com/channel/UCiHli8YiB3YalYVsltDFltw');
         break;
       case 5:
-        handleSocialMediaClick('https://www.tiktok.com');
+        handleSocialMediaClick('https://www.tiktok.com/@harmony.therapy?_t=8mFfoYgCbED&_r=1');
         break;
     }
     console.log('click!!');
