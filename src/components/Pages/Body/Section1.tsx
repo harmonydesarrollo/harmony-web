@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../atoms/Button';
 // import '../../styles/Section1Styles.scss'; // Importa tus estilos CSS aquí
 import '../../styles/Body/Section1Styles.scss';
 import { handleScheduleAppointmentClick } from '../../../utils/functions';
+import FormModal from '../../molecules/FormModal';
 
 const Section1: React.FC = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
   return (
     <div className="section-container">
       <div className="section-content">
@@ -19,12 +28,10 @@ const Section1: React.FC = () => {
           <div>
             <br />
             <br />
-            <Button
-              className="section-btn"
-              onClick={() => handleScheduleAppointmentClick('5576877703', '¡Hola! Bienvenido a Harmony Therapy. Estamos aquí para ayudarte a encontrar la felicidad y libertad de movimiento. Por favor, déjanos tu mensaje y te responderemos pronto. ¡Gracias por elegirnos!')}
-            >
+            <Button className="section-btn" onClick={handleModalOpen}>
               Agendar cita
             </Button>
+            <FormModal open={modalOpen} handleClose={handleModalClose} />
           </div>
         </div>
         <div className="section-image">

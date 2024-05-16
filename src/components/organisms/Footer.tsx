@@ -1,8 +1,10 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import '../styles/HeaderStyles.scss';
 import { handleScheduleAppointmentClick, handleSocialMediaClick } from '../../utils/functions';
+import FormModal from '../molecules/FormModal';
 
 const Footer: React.FC = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   // const textoRef = useRef<HTMLHeadingElement>(null);
 
   // const handleAgendarCitaClick = () => {
@@ -29,10 +31,20 @@ const handleFacebookClick = () => {
 // };
 
 */
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
   const handleIconClick = (op: number) => {
     switch (op) {
       case 1:
-        handleScheduleAppointmentClick('5576877703', '¡Hola! Bienvenido a Harmony Therapy. Estamos aquí para ayudarte a encontrar la felicidad y libertad de movimiento. Por favor, déjanos tu mensaje y te responderemos pronto. ¡Gracias por elegirnos!');
+        handleScheduleAppointmentClick(
+          '5576877703',
+          '¡Hola! Bienvenido a Harmony Therapy. Estamos aquí para ayudarte a encontrar la felicidad y libertad de movimiento. Por favor, déjanos tu mensaje y te responderemos pronto. ¡Gracias por elegirnos!'
+        );
         break;
       case 2:
         handleSocialMediaClick('https://www.facebook.com/HelldyTherapy');
@@ -102,11 +114,11 @@ const handleFacebookClick = () => {
               color: '#0064A8',
               cursor: 'pointer',
             }}
-            
-            onClick={() => handleScheduleAppointmentClick('5576877703', '¡Hola! Bienvenido a Harmony Therapy. Estamos aquí para ayudarte a encontrar la felicidad y libertad de movimiento. Por favor, déjanos tu mensaje y te responderemos pronto. ¡Gracias por elegirnos!')}
+            onClick={handleModalOpen}
           >
             Agendar cita
           </button>
+          <FormModal open={modalOpen} handleClose={handleModalClose} />
           {/* Fila con dos columnas */}
           <div style={{ display: 'flex', justifyContent: 'space-between', width: '80%', marginTop: '5vw' }}>
             {/* Primera columna */}

@@ -1,10 +1,20 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import '../styles/HeaderStyles.scss';
 import { handleScheduleAppointmentClick } from '../../utils/functions';
+import FormModal from '../molecules/FormModal';
 
 const Header: React.FC = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   const textoRef = useRef<HTMLHeadingElement>(null);
   const textoWidthRef = useRef<number | null>(null);
+
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
 
   useEffect(() => {
     const updateTextoWidth = () => {
@@ -81,10 +91,11 @@ const Header: React.FC = () => {
               borderRadius: '5px',
               marginTop: '0.3vw', // Agrega margen superior al botón
             }}
-            onClick={() => handleScheduleAppointmentClick('5576877703', '¡Hola! Bienvenido a Harmony Therapy. Estamos aquí para ayudarte a encontrar la felicidad y libertad de movimiento. Por favor, déjanos tu mensaje y te responderemos pronto. ¡Gracias por elegirnos!')}
+            onClick={handleModalOpen}
           >
             Agendar cita
           </button>
+          <FormModal open={modalOpen} handleClose={handleModalClose} />
         </div>
       </div>
     </header>

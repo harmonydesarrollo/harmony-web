@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../../../atoms/Button';
 import { handleScheduleAppointmentClick } from '../../../../utils/functions';
+import FormModal from '../../../molecules/FormModal';
 
 const TextContent: React.FC = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const handleModalOpen = () => {
+    setModalOpen(true);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+  };
   return (
     <>
       <div style={{ width: '40%', display: 'inline-block', alignContent: 'center' }}>
@@ -21,12 +30,10 @@ const TextContent: React.FC = () => {
             sin limitaciones.
           </p>
           <div style={{ marginTop: '15%' }}>
-            <Button
-              onClick={() => handleScheduleAppointmentClick('5576877703', '¡Hola! Bienvenido a Harmony Therapy. Estamos aquí para ayudarte a encontrar la felicidad y libertad de movimiento. Por favor, déjanos tu mensaje y te responderemos pronto. ¡Gracias por elegirnos!')}
-              className={'section-btn'}
-            >
+            <Button onClick={handleModalOpen} className={'section-btn'}>
               Agendar cita
             </Button>
+            <FormModal open={modalOpen} handleClose={handleModalClose} />
           </div>
         </div>
       </div>
