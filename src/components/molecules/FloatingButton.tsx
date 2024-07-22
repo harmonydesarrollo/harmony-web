@@ -98,7 +98,8 @@ const FloatingButton = () => {
           color="primary"
           aria-label="add"
           className={isShaking ? 'shaking-button' : ''}
-          style={{ position: 'fixed', bottom: '20px', right: '2%', backgroundColor: '#00bb2d', marginBottom:'130px' }}
+          // style={{ position: 'fixed', bottom: '20px', right: '2%', backgroundColor: '#00bb2d', marginBottom:'130px' }} // descomentar este para que el boton se coloque arriba del boton del chatbot MVP-2
+          style={{ position: 'fixed', bottom: '20px', right: '2%', backgroundColor: '#00bb2d'}}
           onClick={handleModalOpen}
         >
           <img

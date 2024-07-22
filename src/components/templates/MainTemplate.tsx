@@ -22,7 +22,7 @@ const MainTemplate: React.FC = () => {
       
       <Footer selectedBranch={selectedBranch} />
       <FloatingButton />
-      <Chatbot/>
+      {/* <Chatbot/> descomentar este para mostrar chatbot MVP-2 */}
     </>
   );
 };
