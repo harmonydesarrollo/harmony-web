@@ -63,6 +63,7 @@ import React, { useState, useEffect } from 'react';
 import { Fab, Tooltip } from '@mui/material';
 import FormModal from './FormModal';
 import '../styles/FloatingButton.scss'; // Importa tus estilos aquí
+// import Chatbot from './Chatbot';//se elmino esto jms mvp2
 // import floatingButtonImage from '../assets/floating_button_image.png'; // Importa la imagen aquí
 
 const FloatingButton = () => {
@@ -74,8 +75,8 @@ const FloatingButton = () => {
       setIsShaking(true);
       setTimeout(() => {
         setIsShaking(false);
-      }, 5000); // Duración del movimiento: 5 segundos (5000 milisegundos)
-    }, 10000); // Intervalo entre movimientos: 10 segundos (10000 milisegundos)
+      }, 10000); // Duración del movimiento: 5 segundos (5000 milisegundos)
+    }, 3000); // Intervalo entre movimientos: 10 segundos (10000 milisegundos)
 
     return () => clearInterval(shakeInterval);
   }, []);
@@ -91,12 +92,14 @@ const FloatingButton = () => {
 
   return (
     <>
+    
       <Tooltip title={<span style={{ animation: 'shine 1s infinite' }}>Solicitar información</span>} aria-label="add">
         <Fab
           color="primary"
           aria-label="add"
           className={isShaking ? 'shaking-button' : ''}
-          style={{ position: 'fixed', bottom: '20px', right: '20px', backgroundColor: '#00bb2d' }}
+          // style={{ position: 'fixed', bottom: '20px', right: '2%', backgroundColor: '#00bb2d', marginBottom:'130px' }} // descomentar este para que el boton se coloque arriba del boton del chatbot MVP-2
+          style={{ position: 'fixed', bottom: '20px', right: '2%', backgroundColor: '#00bb2d'}}
           onClick={handleModalOpen}
         >
           <img
