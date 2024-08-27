@@ -75,7 +75,8 @@ const ServiceList: React.FC<Section2Props> = ({ selectedBranch }) => {
       try {
         if (selectedBranch) {
           // Llama al servicio para obtener los datos de tratamientos específicos de la sucursal seleccionada
-          const data = await serviceServices.getAllServicesByIdBranch(selectedBranch._id);
+          // para hacer el filtro por sucursal solo poner esto getAllServicesByIdBranch en vez de esto getAllServices
+          const data = await serviceServices.getAllServices(selectedBranch._id);
           setImagesTexts(data); // Actualiza el estado con los datos recibidos del servicio
         }
         

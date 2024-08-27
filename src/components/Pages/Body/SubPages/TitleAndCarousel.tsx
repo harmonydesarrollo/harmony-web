@@ -17,7 +17,8 @@ const TitleAndCarousel: React.FC<TitleAndCarouselProps> = ({ branchId }) => {
       try {
         if (branchId) {
           // Llama al servicio para obtener los datos de tratamientos específicos de la sucursal seleccionada
-          const data = await userServices.getAllUsersByIdBranch(branchId, '', 0, 0);
+          // filtro de usuarios por sucursal cambiar esto getAllUsers por  esto getAllUsersByIdBranch
+          const data = await userServices.getAllUsers(branchId, '', 0, 0);
           setImagesTexts(data); // Actualiza el estado con los datos recibidos del servicio
         }
       } catch (error) {

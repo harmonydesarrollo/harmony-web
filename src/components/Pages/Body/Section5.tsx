@@ -6,6 +6,7 @@ import { Partners } from '../../types/partners';
 import { partnerServices } from '../../services/partners';
 
 const settings = {
+  dots: true,
   speed: 1800,
   slidesToShow: 2,
   slidesToScroll: 2,

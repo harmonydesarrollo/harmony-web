@@ -23,7 +23,8 @@ const Section2: React.FC<Section2Props> = ({ selectedBranch }) => {
         if (selectedBranch) {
           
           // Llama al servicio para obtener los datos de tratamientos específicos de la sucursal seleccionada
-          const data = await treatmentsServices.getAllTreatmentsByIdBranch(selectedBranch._id);
+          // para poner el filtro por sucursales, solo cambiar esto getAllTreatments por esto getAllTreatmentsByIdBranch
+          const data = await treatmentsServices.getAllTreatments(selectedBranch._id);
           setImagesTexts(data); // Actualiza el estado con los datos recibidos del servicio
           setIsLoading(false); // Indica que la carga ha finalizado
           setLoading(false)
