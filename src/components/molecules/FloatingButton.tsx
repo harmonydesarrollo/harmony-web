@@ -104,7 +104,7 @@ const FloatingButton = () => {
         >
           <img
             src={
-              'https://cdn2.iconfinder.com/data/icons/2018-social-media-app-logos/1000/2018_social_media_popular_app_logo-whatsapp-512.png'
+              'https://store-images.s-microsoft.com/image/apps.8453.13655054093851568.4a371b72-2ce8-4bdb-9d83-be49894d3fa0.7f3687b9-847d-4f86-bb5c-c73259e2b38e?h=210'
             }
             alt="Floating Button"
             style={{
