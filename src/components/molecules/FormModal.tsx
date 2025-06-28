@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Button,
   Dialog,
@@ -19,20 +19,28 @@ import {
 import { handleScheduleAppointmentClick } from '../../utils/functions';
 
 import { useBranchContext } from '../../context/BranchContext';
+import { Branches } from '../types/branches';
 
 
 interface FormModalProps {
   open: boolean;
   handleClose: () => void;
+  selectedBranch?: Branches | null; // 👈 NUEVA PROP
 }
 
-const FormModal: React.FC<FormModalProps> = ({ open, handleClose }) => {
+const FormModal: React.FC<FormModalProps> = ({ open, handleClose, selectedBranch }) => {
   const { branches } = useBranchContext();
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [selectedOption, setSelectedOption] = useState('');
   const [selectedBranchLocation, setSelectedBranchLocation] = useState('Pachuca'); // valor inicial opcional
 
+   // 👇 NUEVO useEffect para actualizar la sucursal seleccionada cuando cambie
+  useEffect(() => {
+    if (selectedBranch?.name) {
+      setSelectedBranchLocation(selectedBranch.name);
+    }
+  }, [selectedBranch]);
   // const handleSubmit = () => {
   //   handleScheduleAppointmentClick(
   //     '5576877703',
@@ -122,7 +130,7 @@ const FormModal: React.FC<FormModalProps> = ({ open, handleClose }) => {
             onChange={(e) => setSelectedBranchLocation(e.target.value)}
           >
             <FormControlLabel value="Pachuca" control={<Radio />} label="Pachuca" />
-            <FormControlLabel value="Teotihuacan" control={<Radio />} label="Teotihuacan" />
+            <FormControlLabel value="Teotihuacán" control={<Radio />} label="Teotihuacán" />
           </RadioGroup>
         </FormControl>
       </DialogContent>
