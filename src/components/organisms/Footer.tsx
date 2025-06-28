@@ -5,10 +5,11 @@ import FormModal from '../molecules/FormModal';
 import { Branches } from '../types/branches';
 
 interface BodyProps {
-  selectedBranch: Branches | null; 
+  selectedBranch?: Branches | null; 
+  selectedBranchAll: Branches[] | null; 
 }
 
-  const Footer: React.FC<BodyProps> = ({ selectedBranch }) => {
+  const Footer: React.FC<BodyProps> = ({ selectedBranch, selectedBranchAll }) => {
   const [modalOpen, setModalOpen] = useState(false);
   
   const handleModalOpen = () => {
@@ -44,6 +45,7 @@ interface BodyProps {
   useEffect(() => {
     // Esta parte del código no ha cambiado
     // ...
+    console.log({selectedBranchAll});
   }, []);
 
 
@@ -124,10 +126,12 @@ interface BodyProps {
               {/* Imagen */}
               <img src="/LogoHarmony.png" alt="Descripción de la imagen" style={{ width: '70%' }} />
               {/* Texto */}
-              <p style={{ fontSize: '1.5vw', marginTop: '1vw' }}>
-                {selectedBranch?.name} {selectedBranch?.number} {selectedBranch?.city}, {selectedBranch?.municipality}, {selectedBranch?.state}
-                {/* Plaza Juárez 8 Centro, San Juan Teotihuacan, EDO. de México */}
-              </p>
+              {selectedBranchAll?.map((branch, index) => (
+                <p style={{ fontSize: '1.5vw' }} key={index}>
+                  {branch.name} {branch.number} {branch.city}, {branch.municipality}, {branch.state}
+                </p>
+              ))}
+
             </div>
             {/* Segunda columna */}
             <div style={{ width: '35%' }}>
@@ -171,8 +175,11 @@ interface BodyProps {
                   onClick={() => handleIconClick(5)}
                 />
               </div>
-
-              <p style={{ fontSize: '1.5vw', marginTop: '2.5vw' }}>{formatPhoneNumber(selectedBranch?.phone)} harmonytherapy.ht@gmail.com</p>
+              {selectedBranchAll?.map((branch, index) => (
+                <p style={{ fontSize: '1.5vw', marginTop: '2.5vw' }}>{formatPhoneNumber(branch?.name)}: {formatPhoneNumber(branch?.phone)}</p>
+              ))}
+              <p style={{ fontSize: '1.5vw', marginTop: '2.5vw' }}>harmonytherapy.ht@gmail.com</p>
+              
             </div>
           </div>
         </div>

@@ -26,6 +26,7 @@ import { videosServices } from '../services/videos';
 import { VideosType } from '../types/videosType';
 import { Questions } from '../types/questions';
 import { questionsServices } from '../services/questions';
+import HomeList from '../Pages/Body/HomeList';
 
 
 
@@ -185,8 +186,13 @@ const Body: React.FC<BodyProps> = ({ selectedBranch }) => {
       <div id="section7" style={{paddingTop:'3vw'}}>
         <ServiceList selectedBranch={selectedBranch}  />
       </div>
+      <div id="section8" style={{paddingTop:'3vw'}}>
+        <HomeList selectedBranch={selectedBranch}  />
+      </div>
+      
+      
     
-      <div id="section8">
+      <div id="section9">
       <div style={{ padding: '5%', margin: '3%' }}>
       <div
         style={{

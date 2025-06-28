@@ -249,6 +249,9 @@ const AppBar: React.FC<AppBarProps> = ({ onSelectBranch }) => {
                 Servicios
               </MenuItem>
               <MenuItem onClick={() => handleMenuItemClick('section8')}>
+                Nuestras Instalaciones
+              </MenuItem>
+              <MenuItem onClick={() => handleMenuItemClick('section9')}>
                 Dudas
               </MenuItem>
             </Menu>
