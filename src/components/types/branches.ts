@@ -6,4 +6,6 @@
     municipality: string;
     state: string;
     phone: string;
+    lat?: number;
+    lng?: number;
   }
