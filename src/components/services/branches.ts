@@ -7,7 +7,7 @@ async function getAllBranches(token: string): Promise<Branches[]> {
       headers: { Authorization: 'Bearer ' + token },
     });
 
-    console.log(response);
+    // console.log(response);
 
     return response && response.data;
   } catch (e) {

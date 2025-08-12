@@ -83,7 +83,7 @@ const Body: React.FC<BodyProps> = ({ selectedBranch }) => {
   const fetchDataQuestions = async () => {
     try {
       const data = await questionsServices.getAllQuestions('');
-      console.log({data})
+      // console.log({data})
       setQnaList(data);
     } catch (error) {
       console.error('Error fetching questions:', error);

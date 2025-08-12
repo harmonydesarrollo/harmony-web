@@ -23,7 +23,7 @@ const MainTemplate: React.FC = () => {
   const fetchDataBranches = async () => {
     try {
       const data = await branchServices.getAllBranches('');
-      console.log({ data });
+      // console.log({ data });
 
 
       setSelectedBranchAll(data); // setea todas las sucursales
@@ -41,7 +41,7 @@ const MainTemplate: React.FC = () => {
 
   return (
     <>
-      <DisableRightClick />
+      {/* <DisableRightClick /> */}
       <BranchProvider>
       <Header onSelectBranch={handleSelectBranch} />
       <Body selectedBranch={selectedBranch} />

@@ -132,7 +132,7 @@ const Footer: React.FC<BodyProps> = ({ selectedBranch, selectedBranchAll }) => {
                   {branch.name}: {branch.phone}
                 </p>
               ))} */}
-              <p style={{ fontSize: '1.5vw', marginTop: '1vw' }}>harmonytherapy.ht@gmail.com</p>
+              <p style={{ fontSize: '1.5vw', marginTop: '1vw' }}>harmonytherapyft@gmail.com</p>
             </div>
           </div>
 
