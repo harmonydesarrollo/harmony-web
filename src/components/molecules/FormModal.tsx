@@ -129,8 +129,14 @@ const FormModal: React.FC<FormModalProps> = ({ open, handleClose, selectedBranch
             value={selectedBranchLocation}
             onChange={(e) => setSelectedBranchLocation(e.target.value)}
           >
-            <FormControlLabel value="Pachuca" control={<Radio />} label="Pachuca" />
-            <FormControlLabel value="Teotihuacán" control={<Radio />} label="Teotihuacán" />
+            {branches.map((branch) => (
+              <FormControlLabel 
+                key={branch.name} 
+                value={branch.name} 
+                control={<Radio />} 
+                label={branch.name} 
+              />
+            ))}
           </RadioGroup>
         </FormControl>
       </DialogContent>
